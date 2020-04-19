@@ -1,0 +1,34 @@
+name: commanddelemiter
+description: A new Flutter application.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.3
+  provider: ^4.0.5
+  implicitly_animated_reorderable_list: ^0.1.10
+  numberpicker: ^1.2.0
+  flushbar: 1.9.1
+  shared_preferences: ^0.5.6+3
+  get_it: ^4.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: any
+
+flutter_icons:
+  ios: true
+  android: true
+  image_path_ios: "assets/icon_delimiter.png"
+  image_path_android: "assets/icon_delimiter.png"
+
+flutter:
+  uses-material-design: true
