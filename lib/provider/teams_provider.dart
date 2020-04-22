@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:commanddelemiter/model/person.dart';
 import 'package:commanddelemiter/pages/teams/components/team_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TeamsProvider extends ChangeNotifier {
   List<List<Person>> _teams;
@@ -14,9 +15,9 @@ class TeamsProvider extends ChangeNotifier {
 
   List<List<Person>> get teams => _teams;
 
-  List<Column> get teamsWidgets {
+  List<Widget> get teamsWidgets {
     if (teams.isEmpty) return <Column>[];
-    final columns = <Column>[];
+    final columns = <Widget>[SizedBox(height: 6.w)];
     var i = 1;
     teams.forEach((team) {
       var itemList = <TeamItem>[];
