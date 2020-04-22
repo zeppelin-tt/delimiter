@@ -1,17 +1,12 @@
 import 'package:commanddelemiter/model/person.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class PersonItem extends StatelessWidget {
-  final double height;
-  final double separatorSize;
-  final double borderRadius;
+class TeamItem extends StatelessWidget {
   final Person person;
   final String text;
 
-  PersonItem({
-    @required this.height,
-    @required this.separatorSize,
-    @required this.borderRadius,
+  TeamItem({
     this.person,
     this.text,
   });
@@ -20,11 +15,11 @@ class PersonItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      height: height,
-      margin: EdgeInsets.symmetric(horizontal: separatorSize, vertical: separatorSize / 2),
-      padding: EdgeInsets.symmetric(horizontal: separatorSize),
+      height: 42.h,
+      margin: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.w),
+      padding: EdgeInsets.symmetric(horizontal: 12.w),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+        borderRadius: BorderRadius.all(Radius.circular(6.w)),
         color: person == null ? Colors.transparent : Color(0xff2ca5e0),
       ),
       child: Row(

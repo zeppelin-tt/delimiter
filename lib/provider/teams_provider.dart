@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:commanddelemiter/model/person.dart';
+import 'package:commanddelemiter/pages/teams/components/team_item.dart';
 import 'package:flutter/material.dart';
 
 class TeamsProvider extends ChangeNotifier {
@@ -12,6 +13,24 @@ class TeamsProvider extends ChangeNotifier {
         _rnd = Random();
 
   List<List<Person>> get teams => _teams;
+
+  List<Column> get teamsWidgets {
+    if (teams.isEmpty) return <Column>[];
+    final columns = <Column>[];
+    var i = 1;
+    teams.forEach((team) {
+      var itemList = <TeamItem>[];
+      itemList.add(TeamItem(text: 'Team $i'));
+      team.forEach((person) {
+        itemList.add(TeamItem(person: person));
+      });
+      columns.add(Column(children: itemList));
+      i++;
+    });
+    return columns;
+  }
+
+  bool get isEmpty => _teams.isEmpty;
 
   void randomizeAndSet(List<Person> persons, int count, bool captains) {
     _teams = _generateCommands(persons, count, captains);

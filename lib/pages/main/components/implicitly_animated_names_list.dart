@@ -1,6 +1,6 @@
 import 'package:commanddelemiter/model/person.dart';
 import 'package:commanddelemiter/pages/main/components/item_transitions.dart';
-import 'package:commanddelemiter/pages/main/components/team_list_item.dart';
+import 'package:commanddelemiter/pages/main/components/list_name.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:implicitly_animated_reorderable_list/implicitly_animated_reorderable_list.dart';
@@ -8,7 +8,6 @@ import 'package:implicitly_animated_reorderable_list/implicitly_animated_reorder
 class ImplicitlyAnimatedNamesList extends StatelessWidget {
   final List<Person> names;
   final double separatorSize;
-  final double itemHeight;
   final double borderRadius;
   final ValueChanged<Person> onDelete;
   final ScrollController scrollController;
@@ -16,7 +15,6 @@ class ImplicitlyAnimatedNamesList extends StatelessWidget {
   ImplicitlyAnimatedNamesList({
     @required this.names,
     @required this.separatorSize,
-    @required this.itemHeight,
     @required this.borderRadius,
     @required this.onDelete,
     @required this.scrollController,
@@ -32,11 +30,8 @@ class ImplicitlyAnimatedNamesList extends StatelessWidget {
         return ItemTransitions(
           animation: animation,
           slideSide: -1.0,
-          child: TeamListItem(
-            separatorSize: separatorSize,
-            borderRadius: borderRadius,
+          child: ListName(
             person: person,
-            height: itemHeight,
             onDelete: (person) => onDelete(person),
           ),
         );
@@ -45,11 +40,8 @@ class ImplicitlyAnimatedNamesList extends StatelessWidget {
         return ItemTransitions(
           animation: animation,
           slideSide: 1.0,
-          child: TeamListItem(
-            separatorSize: separatorSize,
-            borderRadius: borderRadius,
+          child: ListName(
             person: person,
-            height: itemHeight,
             onDelete: (person) => onDelete(person),
           ),
         );
