@@ -1,3 +1,4 @@
+import 'package:commanddelemiter/localization/localization_constants.dart';
 import 'package:commanddelemiter/pages/main/components/control_panel.dart';
 import 'package:commanddelemiter/pages/teams/teams_page.dart';
 import 'package:commanddelemiter/provider/input_data_provider.dart';
@@ -47,7 +48,7 @@ class _MainPageState extends State<MainPage> {
                     _inputDataProvider.validateName(
                       name: _inputController.text,
                       onEmpty: () {},
-                      onExist: () => Notifications.error(context, 'this name is already in the list'),
+                      onExist: () => Notifications.error(context, getTranslated(context, 'error_already_in_the_list')),
                       onSuccess: () {
                         _inputDataProvider.addName(_inputController.text);
                         _inputController.clear();
@@ -62,7 +63,7 @@ class _MainPageState extends State<MainPage> {
                       FocusScope.of(context).requestFocus(FocusNode());
                       return;
                     }
-                    Notifications.error(context, 'teams are not completed');
+                    Notifications.error(context, getTranslated(context, 'error_teams_not_completed'));
                   },
                 ),
               ),

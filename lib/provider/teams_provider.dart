@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:commanddelemiter/localization/localization_constants.dart';
 import 'package:commanddelemiter/model/person.dart';
 import 'package:commanddelemiter/pages/teams/components/team_item.dart';
 import 'package:flutter/material.dart';
@@ -15,13 +16,13 @@ class TeamsProvider extends ChangeNotifier {
 
   List<List<Person>> get teams => _teams;
 
-  List<Widget> get teamsWidgets {
+  List<Widget> teamsWidgets(BuildContext context) {
     if (teams.isEmpty) return <Column>[];
     final columns = <Widget>[SizedBox(height: 6.w)];
     var i = 1;
     teams.forEach((team) {
       var itemList = <TeamItem>[];
-      itemList.add(TeamItem(text: 'Team $i'));
+      itemList.add(TeamItem(text: '${getTranslated(context, 'team_page2')} $i'));
       team.forEach((person) {
         itemList.add(TeamItem(person: person));
       });

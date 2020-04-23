@@ -1,3 +1,4 @@
+import 'package:commanddelemiter/localization/localization_constants.dart';
 import 'package:commanddelemiter/pages/main/components/implicitly_animated_names_list.dart';
 import 'package:commanddelemiter/provider/input_data_provider.dart';
 import 'package:flutter/cupertino.dart';
@@ -50,8 +51,8 @@ class ControlPanel extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(height: 4.h),
-                    Text('number of teams', style: TextStyle(color: Colors.white70)),
+                    SizedBox(height: 6.h),
+                    Text(getTranslated(context, 'number_of_teams'), style: TextStyle(color: Colors.white70, fontSize: 13.0.sp)),
                     Spacer(),
                     Theme(
                       data: ThemeData(
@@ -78,8 +79,8 @@ class ControlPanel extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(height: 4.h),
-                    Text('with captains', style: TextStyle(color: Colors.white70)),
+                    SizedBox(height: 6.h),
+                    Text(getTranslated(context, 'with_captains'), style: TextStyle(color: Colors.white70, fontSize: 13.0.sp)),
                     Spacer(),
                     CupertinoSwitch(
                       activeColor: Color(0xff2ca5e0),
@@ -99,7 +100,11 @@ class ControlPanel extends StatelessWidget {
                   child: FlatButton(
                     color: Color(0xff2ca5e0),
                     onPressed: onGenerate,
-                    child: Text('Generate', style: TextStyle(color: Colors.white70, fontStyle: FontStyle.italic, fontSize: 17.0)),
+                    child: Text(
+                      getTranslated(context, 'generate'),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white70, fontStyle: FontStyle.italic, fontSize: 16.0.sp),
+                    ),
                   ),
                 ),
               )
@@ -128,7 +133,7 @@ class ControlPanel extends StatelessWidget {
                   decoration: InputDecoration(
                     filled: true,
                     border: InputBorder.none,
-                    hintText: 'Enter name',
+                    hintText: getTranslated(context, 'enter_name'),
                     hintStyle: TextStyle(color: Colors.white60),
                   ),
                 ),
@@ -142,7 +147,11 @@ class ControlPanel extends StatelessWidget {
                   child: FlatButton(
                     color: Color(0xff2ca5e0),
                     onPressed: onAddName,
-                    child: Text('Add', style: TextStyle(color: Colors.white70, fontStyle: FontStyle.italic, fontSize: 17.0.sp)),
+                    child: Text(
+                      getTranslated(context, 'add'),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white70, fontStyle: FontStyle.italic, fontSize: 16.0.sp),
+                    ),
                   ),
                 ),
               )

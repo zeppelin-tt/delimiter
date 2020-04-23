@@ -1,3 +1,4 @@
+import 'package:commanddelemiter/localization/localization_constants.dart';
 import 'package:commanddelemiter/provider/teams_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,7 +11,7 @@ class TeamsPage extends StatelessWidget {
     final teamsProvider = Provider.of<TeamsProvider>(context);
     return Material(
       color: Colors.black,
-      child: teamsProvider.isEmpty ? _EmptyTeamsView() : ListView(children: teamsProvider.teamsWidgets),
+      child: teamsProvider.isEmpty ? _EmptyTeamsView() : ListView(children: teamsProvider.teamsWidgets(context)),
     );
   }
 }
@@ -27,7 +28,11 @@ class _EmptyTeamsView extends StatelessWidget {
             color: Colors.grey[900],
             height: 400.0.h,
           ),
-          Text('No teams yet', style: TextStyle(color: Colors.grey[900], fontSize: 42.0.sp))
+          Text(
+            getTranslated(context, 'no_teams_yet'),
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.grey[900], fontFamily: 'Kill The Noise', fontSize: 52.0.sp),
+          )
         ],
       ),
     );

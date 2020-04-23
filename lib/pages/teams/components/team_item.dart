@@ -27,7 +27,14 @@ class TeamItem extends StatelessWidget {
         children: <Widget>[
           person == null
               ? Text(text, style: TextStyle(color: Colors.white70, fontSize: 22.0))
-              : Text(person.name, style: TextStyle(color: Colors.black, fontSize: 22.0)),
+              : SizedBox(
+                  width: 310.w,
+                  child: Text(
+                    person.name,
+                    style: TextStyle(color: Colors.black, fontFamily: 'Foma_flibustier', fontSize: 26.0.sp),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
           if (person != null && person.captain) Icon(Icons.star, color: Colors.black),
         ],
       ),

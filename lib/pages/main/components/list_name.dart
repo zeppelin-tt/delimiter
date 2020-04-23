@@ -25,7 +25,14 @@ class ListName extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(person.name, style: TextStyle(color: Colors.white, fontSize: 22.0)),
+          SizedBox(
+            width: 310.w,
+            child: Text(
+              person.name,
+              style: TextStyle(color: Colors.white, fontFamily: 'Foma_flibustier', fontSize: 26.0.sp),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
           Material(
             color: Colors.transparent,
             child: InkWell(
