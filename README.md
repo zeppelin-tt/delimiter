@@ -1,4 +1,4 @@
-# delimeter
+# delimiter
 
 A new Flutter application.
 
